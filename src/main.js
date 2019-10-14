@@ -13,9 +13,9 @@ Vue.use(VueMaterial)*/
 
 
 Vue.config.productionTip = false
-import store from './store/store'
+import store from './store/store'//ИМПОРТИРУЕМ ЭЛЕМЕНТ VUEX С СОЗДАННЫМИ ПАРАМЕТРАМИ
 new Vue({
-  store,
+  store,//РЕГИСТРИРУЕМ ОБЪЕКТ В ОСНОВНОМ КЛАССЕ
   router,
   render: h => h(App)
 }).$mount('#app')
