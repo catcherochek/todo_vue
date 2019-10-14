@@ -2,7 +2,7 @@
 <template>
   <div id="app">
     <TODOApp></TODOApp>
-
+    <p>{{count}}</p>
   </div>
 
 
@@ -25,7 +25,13 @@
 <script>
   // Get rid of those pesky eslint errors for Materialize-css
 import TODOApp from "./components/TODOApp/TODOApp";
+
   export default {
+
+    computed: {
+      count(){return "sss";}
+
+    },
     mounted(){
       //M.AutoInit();
     },

@@ -1,8 +1,15 @@
 <template>
-
-
+   <div id = "home">
+   <p>sdfsdfasad</p>
+   <p>sdfsdfasad</p>
+   <p>sdfsdfasad</p>
+   <p>sdfsdfasad</p>
+   <p>sdfsdfasad</p>
+   <p>sdfsdfasad</p>
+   <p>sdfsdfasad</p>
+   <p>sdfsdfasad</p>
    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-
+   </div>
 
 </template>
 
