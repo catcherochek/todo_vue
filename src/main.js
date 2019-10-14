@@ -8,9 +8,11 @@ import "materialize-css/dist/js/materialize.min.js";
 
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
-
 Vue.use(VueMaterial)*/
 
+
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate);
 
 Vue.config.productionTip = false
 import store from './store/store'//ИМПОРТИРУЕМ ЭЛЕМЕНТ VUEX С СОЗДАННЫМИ ПАРАМЕТРАМИ
