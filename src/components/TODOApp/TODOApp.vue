@@ -5,7 +5,11 @@
               <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
                    <md-icon>menu</md-icon>
               </md-button>
-              <span class="md-title">TODOList/PleaseLogin/</span>
+              <span class="md-title">TODOList/
+                  <span v-if="isLogged()" class="">You are loged as {{username}}</span>
+                   <span v-else class="">You are not loged please log in</span>
+
+              </span>
          </md-app-toolbar>
 
          <md-app-drawer :md-active.sync="menuVisible">
@@ -16,15 +20,15 @@
                      md-confirm-text="Ok" />
 
              <md-list>
-                            <md-list-item>
+                            <md-list-item v-if="!isLogged()">
                                 <md-icon>verified_user</md-icon>
-                                <md-button class="  md-dense md-primary" @click="first = true"><router-link to="/login">Login</router-link></md-button>
+                                <md-button class="md-dense md-primary"  @click="menuVisible=!menuVisible"><router-link to="/login">Login</router-link></md-button>
 
                             </md-list-item>
 
-                            <md-list-item>
+                            <md-list-item v-if="isLogged()">
                                 <md-icon>exit_to_app</md-icon>
-                                <md-button class="  md-dense md-primary" @click="first = true"><router-link to="/about">Logout</router-link></md-button>
+                                <md-button  class="md-dense md-primary" @click="logOut();menuVisible=!menuVisible"><router-link to="/">Logout</router-link></md-button>
                             </md-list-item>
 
                             <md-list-item>
@@ -85,9 +89,23 @@
         name:'TODOApp',
         props: {
         },
+        computed:{
+            username:function () {
+              return this.$store.state.username;
+            }
+        },
         data: () => ({
             menuVisible: false,
             first:false
-        })
+        }),
+        methods:{
+           isLogged: function(){
+                return this.$store.state.isLogged;
+           },
+            logOut:function(){
+                this.$store.commit('LogOut');
+            }
+
+        }
     };
 </script>

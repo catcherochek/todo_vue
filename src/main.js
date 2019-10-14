@@ -12,11 +12,10 @@ import 'vue-material/dist/vue-material.min.css'
 Vue.use(VueMaterial)*/
 
 
-
 Vue.config.productionTip = false
-
+import store from './store/store'
 new Vue({
-
+  store,
   router,
   render: h => h(App)
 }).$mount('#app')

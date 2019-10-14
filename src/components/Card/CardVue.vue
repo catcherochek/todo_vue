@@ -1,6 +1,6 @@
 <template id = "CardVue" >
     <div>
-        <md-button class="md-fab">
+        <md-button @click="decrr" class="md-fab">
             <md-icon>menu</md-icon>
         </md-button>
             <!-- Dropdown Trigger -->
@@ -34,6 +34,11 @@
     export default {
         components:{
 
+        },
+        methods:{
+           decrr(){
+               this.$store.commit('countdecrement')
+           }
         },
         name: 'CardVue',
         props: {

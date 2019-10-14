@@ -29,7 +29,7 @@ import TODOApp from "./components/TODOApp/TODOApp";
   export default {
 
     computed: {
-      count(){return "sss";}
+      count(){return this.$store.state.count;}
 
     },
     mounted(){

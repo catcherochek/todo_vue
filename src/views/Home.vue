@@ -8,6 +8,7 @@
    <p>sdfsdfasad</p>
    <p>sdfsdfasad</p>
    <p>sdfsdfasad</p>
+      <md-button @click="incc">nsljknvlk</md-button>
    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/>-->
    </div>
 
@@ -26,6 +27,11 @@ export default {
   mounted(){
    // M.AutoInit();
 
-  }
+  },
+   methods: {
+      incc() {
+         this.$store.commit('countincrement');
+      }
+   }
 }
 </script>
