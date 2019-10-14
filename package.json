@@ -17,6 +17,7 @@
     "vue-nprogress": "^0.1.5",
     "vue-router": "^3.0.3",
     "vuejs-loading-plugin": "^1.0.51",
+    "vuelidate": "^0.7.4",
     "vuex": "^3.1.1"
   },
   "devDependencies": {

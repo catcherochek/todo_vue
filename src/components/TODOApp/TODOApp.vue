@@ -3,11 +3,11 @@
      <md-app md-mode="reveal">
          <md-app-toolbar class="md-primary">
               <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
-                   <md-icon>menu</md-icon>
+                   <md-icon >menu</md-icon>
               </md-button>
               <span class="md-title">TODOList/
                   <span v-if="isLogged()" class="">You are loged as {{username}}</span>
-                   <span v-else class="">You are not loged please log in</span>
+                   <span v-else class="">You are not loged please log in or register</span>
 
               </span>
          </md-app-toolbar>
@@ -22,18 +22,18 @@
              <md-list>
                             <md-list-item v-if="!isLogged()">
                                 <md-icon>verified_user</md-icon>
-                                <md-button class="md-dense md-primary"  @click="menuVisible=!menuVisible"><router-link to="/login">Login</router-link></md-button>
+                                <md-button class="md-raised md-primary " @click="menuVisible=!menuVisible"><router-link to="/login"><span style="color: black"  >Login</span></router-link></md-button>
 
                             </md-list-item>
 
                             <md-list-item v-if="isLogged()">
                                 <md-icon>exit_to_app</md-icon>
-                                <md-button  class="md-dense md-primary" @click="logOut();menuVisible=!menuVisible"><router-link to="/">Logout</router-link></md-button>
+                                <md-button  class="md-raised md-primary" @click="logOut();menuVisible=!menuVisible"><router-link to="/">Logout</router-link></md-button>
                             </md-list-item>
 
-                            <md-list-item>
+                            <md-list-item v-if="!isLogged()">
                                 <md-icon>supervised_user_circle</md-icon>
-                                <span class="md-list-item-text">create user</span>
+                                <md-button class="md-raised md-primary " @click="menuVisible=!menuVisible"><router-link to="/register"><span style="color: black">Register</span></router-link></md-button>
                             </md-list-item>
 
 
@@ -62,6 +62,7 @@
     @include md-register-theme("default", (
             primary: md-get-palette-color(green, A200), // The primary color of your application
             accent: md-get-palette-color(yellow, A200) // The accent or secondary color
+
     ));
 
     @import "~vue-material/dist/theme/all"; // Apply the theme

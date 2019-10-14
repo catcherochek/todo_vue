@@ -3,7 +3,6 @@
 </template>
 
 <script>
-    import {ValidationMixin} from 'vuelidate'
     export default {
       name: "login",
         methods: {
